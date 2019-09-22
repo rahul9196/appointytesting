@@ -63,8 +63,10 @@
 			
 			browser.ignoreSynchronization = true;
 			
+			browser.sleep('3000')
 			var isPresent = EC.elementToBeClickable(dayview.calendartime);
 			browser.wait(isPresent, 8000)
+			console.log('time=',dayview.calendartime)
 			
 			dayview.calendartime.click();
 			
