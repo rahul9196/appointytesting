@@ -23,7 +23,7 @@
 	
 	test_data.forEach(function(data){
 		
-		console.log(data.Date);
+		console.log(data.Date); //text
 		
 		
 	var myDate = new Date(browser.params.Date); // Your timezone!
