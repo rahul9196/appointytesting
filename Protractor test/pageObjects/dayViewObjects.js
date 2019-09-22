@@ -1,6 +1,6 @@
 
 
-var time = "06:00 pm";
+var time = "01:00 pm";
 var servicename = "Hair Cut";
 
 function  dayView(){
