@@ -6,7 +6,7 @@ exports.config = {
   framework: 'jasmine',
 //  seleniumAddress: 'http://localhost:4444/wd/hub',
   directConnect: true,
-  specs: [ 'payBooking.js.js'],
+  specs: [ 'recurringbooking.js'],
   
   
   params:{
@@ -19,7 +19,7 @@ exports.config = {
 	Country : '254',
 	Username : 'testuser323',
 	password : 'appointy1',
-	Date : 'December 19, 2019 02:30 PM',
+	Date : 'March 10, 2020 02:30 PM',
 	Staff : '366706',
 	customerName : 'test',
 	email : 'appointytest@gmail.com',

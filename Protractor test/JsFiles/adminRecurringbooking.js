@@ -66,6 +66,7 @@
 			var isPresent = EC.elementToBeClickable(dayview.calendartime);
 			browser.wait(isPresent, 8000)
 			
+			browser.sleep('2000')
 			dayview.calendartime.click();
 			
 			browser.sleep('1000')
@@ -149,11 +150,11 @@
 			var bookbutton = element(by.xpath('//span[text()="Book"]'));
 			var isClickable1 = EC.elementToBeClickable(bookbutton);
 			browser.wait(isClickable1, 8000)
-			bookbutton.click();
+			
 			
 			browser.sleep(2000)
-			
-			browser.wait(EC.presenceOf(dayview.successnotification), 8000)
+			bookbutton.click();
+			browser.wait(EC.presenceOf(dayview.successnotification), 120000)
 			expect(dayview.successnotification.getText()).toBe('Appointment added successfully!')
 			browser.sleep(3000)
 		})
