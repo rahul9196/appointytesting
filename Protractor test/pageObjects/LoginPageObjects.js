@@ -10,10 +10,10 @@ function login(){
 		browser.get('https://qa-business.appointy.com');
 	}
 	
-	this.login = function(){
-		element(by.id('Username')).sendKeys('testuser306');
+	this.login = function(username,password){
+		element(by.id('Username')).sendKeys(username);
 		element(by.css('.ladda-label')).click();
-		element(by.id('Password')).sendKeys('appointy1');
+		element(by.id('Password')).sendKeys(password);
 		element(by.css('.ladda-label')).click();
 	}
 }

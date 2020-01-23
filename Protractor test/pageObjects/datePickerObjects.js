@@ -10,7 +10,7 @@ function datepicker(){
 	this.dates = element.all(by.css('span[class="flatpickr-day "]'));
 	
 	this.recurryeartextbox = element(by.className('flatpickr-calendar animate showTimeInput arrowTop open')).element(by.css('input[class="numInput cur-year"]'));
-	this.recurrcurrmonth = element(by.className('flatpickr-calendar animate showTimeInput arrowTop open')).element(by.css('span[class="cur-month"]'));
+	this.recurrmonth = element(by.className('flatpickr-calendar animate showTimeInput arrowTop open')).element(by.css('span[class="cur-month"]'));
 	this.recurrnextbutton = element(by.className('flatpickr-calendar animate showTimeInput arrowTop open')).element(by.css('span[class="flatpickr-next-month"]'));
 	this.recurrpreviousbutton = element(by.className('flatpickr-calendar animate showTimeInput arrowTop open')).element(by.css('span[class="flatpickr-prev-month"]'));
 	this.recurrcurrentdate = element(by.className('flatpickr-calendar animate showTimeInput arrowTop open')).element(by.css('span[class="text-blue-2"]'));

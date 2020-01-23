@@ -9,7 +9,7 @@
 	beforeAll(function(){
 		browser.waitForAngularEnabled(false);
 		login.getUrl();
-		login.login();
+		login.login("testuser306","appointy1");
 		browser.waitForAngularEnabled(true);
 	})
 	
@@ -51,7 +51,7 @@
 	
 	var EC = protractor.ExpectedConditions;
 	
-		it('- recurring appointment', function(){
+		it('Admin side - recurring appointment', function(){
 			
 			
 			browser.getCurrentUrl().then(function(value){
@@ -79,17 +79,15 @@
 			
 			dayview.recurringlink.click();
 			browser.sleep('2000')
-			element(by.id('recurr-list')).element(by.css('li:nth-child(3)')).click();
-			element(by.xpath('//span[text()="date"]')).click();
+			dayview.recurroption.click();
+			dayview.recurrdate.click();
 			browser.sleep('2000')
-			
-			
 			
 			datepicker.recurryeartextbox.clear();
 			datepicker.recurryeartextbox.sendKeys(year)
 			
 			
-			datepicker.recurrcurrmonth.getText().then(function(value)
+			datepicker.recurrmonth.getText().then(function(value)
 					{
 				
 				var expIndex = monthArray.indexOf(myMonth)
@@ -129,31 +127,26 @@
 									 });
 								}).first().click();
 			
-			var progressbar = element(by.xpath('//div[@id="progress-bar" and @style="display: none;"]'));
-			var progressbarstale = EC.presenceOf(progressbar);
+			
+			var progressbarstale = EC.presenceOf(myspace.progressbar);
 			browser.wait(progressbarstale, 8000);
-			element(by.xpath('//button[@class="btn blue-2 z-depth-0 btn-sm"]')).click();
 			
-			element(by.xpath('//input[@placeholder="Select Customer"]')).sendKeys("rahul");
-			var customerlist = element(by.xpath('//div[@class="selectize-dropdown single active"]'));
-			var customerwait = EC.visibilityOf(customerlist);
-			browser.wait(customerwait, 8000);
+			dayview.selectrecurr.click();
 			
-			element.all(by.xpath('//span[@class="word-spacing-none"]')).filter(function(value)
-					{
-				return value.getText().then(function(text)
-						{
-					return text == "rahulgupta@appointy.com";
-						})
-					}).first().click();
+			dayview.customertextbox.sendKeys("test");
 			
-			var bookbutton = element(by.xpath('//span[text()="Book"]'));
-			var isClickable1 = EC.elementToBeClickable(bookbutton);
+			var customerlistwait = EC.visibilityOf(dayview.customerlist);
+			browser.wait(customerlistwait, 8000);
+			
+			dayview.selectCustomer("appointytest@gmail.com")
+			
+			
+			var isClickable1 = EC.elementToBeClickable(dayview.bookbutton);
 			browser.wait(isClickable1, 8000)
 			
 			
 			browser.sleep(2000)
-			bookbutton.click();
+			dayview.bookbutton.click();
 			browser.wait(EC.presenceOf(dayview.successnotification), 120000)
 			expect(dayview.successnotification.getText()).toBe('Appointment added successfully!')
 			browser.sleep(3000)
@@ -161,8 +154,6 @@
 		
 	})
 	
-	    
-	
-	
+		
 	
 })
