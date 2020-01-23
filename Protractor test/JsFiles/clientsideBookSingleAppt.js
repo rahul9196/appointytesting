@@ -78,7 +78,7 @@
 //		login page
 				
 		browser.wait(EC.presenceOf(bookingPage.username), 5000);
-		bookingPage.username.sendKeys('appointytest@gmail.com')
+		bookingPage.username.sendKeys('rahulgupta@appointy.com')
 		
 		bookingPage.nextButton.click().then(function(){
 			
@@ -224,7 +224,7 @@
 				if(!value){
 				
 			browser.wait(EC.presenceOf(bookingPage.username), 5000);
-			bookingPage.username.sendKeys('appointytest@gmail.com')
+			bookingPage.username.sendKeys('rahulgupta@appointy.com')
 			
 			bookingPage.nextButton.click();		
 			
