@@ -1,8 +1,8 @@
 
 var ser = "Hair Cut";
-var date = "11";
+var date = "25";
 var month = " Jan ";
-var time = "02:30 PM"
+var time = "09:00 PM"
 var quantity = "4"
 
 function customerBooking(){
