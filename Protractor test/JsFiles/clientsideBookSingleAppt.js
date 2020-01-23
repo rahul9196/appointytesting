@@ -1,6 +1,6 @@
 		var bookingPage = require('../pageObjects/clientBookingPageObjects.js')
 
-//test
+//test 123
 		describe('test cient booking', function(){
 			
 			var EC = protractor.ExpectedConditions;
