@@ -19,16 +19,26 @@ function GCPage()
 	
 	this.login = function()
 	{
-element(by.xpath('//div[@class="app-header-menu"]//div[@class="app-header-menu-item-list ng-tns-c0-0 ng-star-inserted"]//span[text()="Login"]')).click();
+		element.all(by.xpath('//div[@class="app-service-title px-2"]')).count()
+		.then(function(count){
+			
+		if(count>0){
+element(by.xpath('//div[@class="app-header-menu"]//span[text()="Login"]'))
+.click();
+}else{
+	element(by.xpath('//div[@class="modal-body"]//span[text()="Login"]'))
+}
 browser.getAllWindowHandles().then(function(handle)
 		{
 	browser.switchTo().window(handle[1]);
-	browser.waitForAngularEnabled(false);
+//	browser.waitForAngularEnabled(false);
 	element(by.id('Username')).sendKeys('appointytest@gmail.com')
 	element(by.id('Password')).sendKeys('123456')
 	element(by.xpath('//button[@class="ladda-button btn-block"]')).click();
 	browser.switchTo().window(handle[0]);
-	browser.waitForAngularEnabled(true);
+//	browser.waitForAngularEnabled(true);
+		})
+		
 		})
 	}
 		

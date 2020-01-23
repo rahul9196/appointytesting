@@ -6,8 +6,9 @@ exports.config = {
   framework: 'jasmine',
 //  seleniumAddress: 'http://localhost:4444/wd/hub',
   directConnect: true,
-  specs: [ 'recurringbooking.js'],
+  specs: [ 'adminAccountRegister.js'],
   
+  useAllAngular2AppRoots: true,
   
   params:{
 	  url:'http://juliemr.github.io/protractor-demo',
@@ -15,31 +16,36 @@ exports.config = {
 	  num2:'6',
 	  result:'10',
 	Name : 'rahul',
-	Email : 'dfghjgf@hgfgh.com',
+	Email : 'dfghjgf@test45.com',
 	Country : '254',
-	Username : 'testuser323',
+	Username : 'testuser3116',
 	password : 'appointy1',
-	Date : 'December 19, 2019 02:30 PM',
+	Date : 'January 10, 2020 02:30 PM',
+	time : "02:30 pm",
 	Staff : '366706',
 	customerName : 'test',
-	email : 'appointytest@gmail.com',
+	email : 'dfghJ@test45.com',
 	country : 'India',
 	state : 'Madhya',
-	city : 'Indore'
+	city : 'Indore',
+	servicename : "Hair cut 2",
+	quantity : "04"
   },
   
   
+
   multiCapabilities: [
 //	  {'browserName': 'firefox'},
 	 {'browserName': 'chrome',
 //		 'marionnette': true
 //		 chromeOptions: {
 //			 args: [ "--headless", "--disable-gpu", "--window-size=800,600" ]
-//		   }
+		   }
 //		 'shardTestFiles': true,
 //	      'maxInstances': 1
-	 }
+//	 }
 	  ],
+	  
   allScriptsTimeout: 30000,
 	  
 	  suites:{

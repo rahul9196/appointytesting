@@ -16,6 +16,7 @@
     "jasmine-data-provider": "^2.2.0",
     "protractor": "^5.4.2",
     "protractor-jasmine2-html-reporter": "0.0.7",
+    "webdriver-manager": "^12.1.7",
     "xlsx": "0.14.5"
   },
   "author": "rahul gupta",
