@@ -37,10 +37,10 @@ exports.config = {
   
 
   multiCapabilities: [
-//	  {'browserName': 'firefox',
+	  {'browserName': 'firefox',
 ////	  'shardTestFiles': true,
 ////      'maxInstances': 3
-//		},
+		},
 		
 	 {'browserName': 'chrome',
 //		 'marionnette': true
