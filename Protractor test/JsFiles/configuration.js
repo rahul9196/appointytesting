@@ -6,9 +6,11 @@ exports.config = {
   framework: 'jasmine',
 //  seleniumAddress: 'http://localhost:4444/wd/hub',
   directConnect: true,
-  specs: [ 'clientsideBookSingleAppt.js'],
-  
-  useAllAngular2AppRoots: true,
+  specs: [ '../testFiles/brokenLinks.js'],
+//  exclude: ['../testFiles/brokenLinks.js','../testFiles/test3.js'],
+
+
+//  useAllAngular2AppRoots: true,
   
   params:{
 	  url:'http://juliemr.github.io/protractor-demo',
@@ -35,15 +37,19 @@ exports.config = {
   
 
   multiCapabilities: [
-//	  {'browserName': 'firefox'},
+//	  {'browserName': 'firefox',
+////	  'shardTestFiles': true,
+////      'maxInstances': 3
+//		},
+		
 	 {'browserName': 'chrome',
 //		 'marionnette': true
 //		 chromeOptions: {
 //			 args: [ "--headless", "--disable-gpu", "--window-size=800,600" ]
-		   }
+//		   }
 //		 'shardTestFiles': true,
-//	      'maxInstances': 1
-//	 }
+//	      'maxInstances': 3
+	 }
 	  ],
 	  
   allScriptsTimeout: 30000,
@@ -51,6 +57,8 @@ exports.config = {
 	  suites:{
 		  Smoke : ['spec1.js','Spec2.js']
 	  },
+	  
+//	  SELENIUM_PROMISE_MANAGER: false,
 	  
 	  onPrepare: function() {
 		  browser.driver.manage().window().maximize();
@@ -60,6 +68,16 @@ exports.config = {
 			          savePath: 'target/screenshots'
 			        })
 			      );
+		  
+		  by.addLocator('newLocator', function(linkText, opt_parentElement) {
+				
+				var using = opt_parentElement || document
+				links = using.querySelectorAll('a');
+				
+				return Array.prototype.filter.call(links, function(link){
+					return link.textContent === linkText;
+				})
+			})
 
 		}
 

@@ -1,12 +1,7 @@
 
 
-<<<<<<< HEAD
-var time = "05:00 pm";
-var servicename = "Hair Cut";
-=======
-var time = browser.params.time;
-var servicename = browser.params.servicename;
->>>>>>> develop
+var time = "05:00 PM"
+var servicename = "Hair cut"
 
 function  dayView(){
 	

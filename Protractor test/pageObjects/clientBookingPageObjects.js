@@ -1,9 +1,11 @@
 
 var ser = "Hair Cut";
-var date = "26";
-var month = " Jan ";
-var time = "09:00 PM"
+var date = "9";
+var month = " Feb ";
+var time = "09:00 AM"
 var quantity = "4"
+
+	var EC = protractor.ExpectedConditions;
 
 function customerBooking(){
 	
@@ -40,9 +42,11 @@ function customerBooking(){
 	
 	this.login = function()
 			{
+		
 		element(by.xpath('//div[@class="app-header-menu"]//div[@class="app-header-menu-item-list ng-tns-c0-0 ng-star-inserted"]//span[text()="Login"]')).click();
 		browser.getAllWindowHandles().then(function(handle)
 				{
+			
 			browser.switchTo().window(handle[1]);
 			browser.waitForAngularEnabled(false);
 			element(by.id('Username')).sendKeys('appointytest@gmail.com')
@@ -52,6 +56,44 @@ function customerBooking(){
 			browser.waitForAngularEnabled(true);
 				})
 			}
+	
+	
+	this.waitForLoader = ()=>{
+		
+		browser.wait(EC.stalenessOf(this.loader), 40000).then(function(){
+			console.log('waiting')
+		})
+	}
+	
+	
+	
+	this.selectService = function()
+			{
+		var ser = "Hair Cut";
+		
+		
+		
+		this.service.isPresent().then(function(value)
+						{
+			if(value)
+					{
+				element(by.xpath('//span[text()="'+ser+'"]')).click();
+					}
+						})
+						
+		element.all(by.xpath('//div[@class="app-service-title px-2"]')).count().then(function(value)
+						{
+			
+			if(value>1){ 
+				browser.wait(EC.elementToBeClickable(element(by.xpath('//span[text()="Next"]'))), 5000);
+				element(by.xpath('//span[text()="Next"]')).click();
+						}
+						})
+		browser.wait(EC.stalenessOf(element(by.xpath('//div[contains(concat(" ",@class," "),"app-service-list-container")]//h4[@class="h4-responsive text-capitalize"]'))), 20000);
+		
+			}
+	
+	
 	
 	
 }

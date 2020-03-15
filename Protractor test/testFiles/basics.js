@@ -19,6 +19,6 @@ var a=["ram","shyam","hello","world"]
 //	i++
 //} while(i<a.length)
 
-for (i=0;i<a.length;i=i+2){
+for (i=0;i<a.length;i=i+1){
 	console.log(a[i])
 }

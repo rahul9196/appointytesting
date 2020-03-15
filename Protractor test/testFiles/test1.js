@@ -1,26 +1,58 @@
-describe('login to appointy',function(){
+
+//var async = require('asyncawait/async');
+//var await = require('asyncawait/await');
+
+
+describe('test', function(){
+	
 	browser.waitForAngularEnabled(false);
 	
-	browser.get('https://appointy.com');
-//	it('should login',function()
-//			{
+//	it('test',  async function(){
+//		await browser.get('https://qa-booking.appointy.com/graps')
 //		
-//		element(by.id('Username')).sendKeys('testuser306');
-//		element(by.css('.ladda-label')).click();
-//		element(by.id('Password')).sendKeys('appointy1');
-//		element(by.css('.ladda-label')).click();
-//		
-//		browser.waitForAngularEnabled(true);
-//		
-//			})
-			
-			it('book appointment', function()
-			{
-				browser.sleep(4000);
-			browser.executeScript('scrollTo(0,+500)');
-			
-			browser.sleep(4000);
-			
-			})
-			
+//		var EC = protractor.ExpectedConditions;
+//		browser.wait(EC.stalenessOf(await element(by.xpath('//svg[@class="svg-loader"]'))), 15000)
+//		await element(by.xpath('//span[text()="Massage zamók"]')).click();
+//		 
+//	})
+	
+	it('test',  function(){
+		 browser.get('https://appointy.com')
+		browser.getTitle()
+		.then(function(title){
+			console.log(title)
+		})
+	})
+	
+	it('test',  function(){
+		 browser.get('https://indiatoday.in.com')
+		 browser.getTitle()
+		.then(function(title){
+			console.log(title)
+		})
+	})
+	
+	it('test',  function(){
+		 browser.get('https://orange.com')
+		 browser.getTitle()
+		.then(function(title){
+			console.log(title)
+		})
+	})
+	
+	it('test',  function(){
+		 browser.get('https://UAT.com')
+		 browser.getTitle()
+		.then(function(title){
+			console.log(title)
+		})
+	})
+	
+	it('test',  function(){
+		 browser.get('https://en.wikipedia.org/wiki/Bala_(2019_film)')
+		 browser.getTitle()
+		.then(function(title){
+			console.log(title)
+		})
+	})
 })

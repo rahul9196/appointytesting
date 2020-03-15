@@ -16,7 +16,7 @@
 	
 	var test_data = xl.read_from_excel('Sheet1', './testData.xlsx');
 	
-	test_data.forEach(function(data){
+	test_data.Each(function(data){
 		
 		console.log(data.Date);
 		

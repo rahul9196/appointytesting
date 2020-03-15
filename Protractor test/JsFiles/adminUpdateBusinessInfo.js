@@ -6,7 +6,7 @@ describe('login to appointy',function(){
 		browser.get('https://qa-business.appointy.com');
 	})
 	
-	it('should login',function(){
+	fit('should login',function(){
 		
 		element(by.id('Username')).sendKeys('testuser306');
 		element(by.css('.ladda-label')).click();
@@ -17,7 +17,7 @@ describe('login to appointy',function(){
 		//expect(element(by.css('.pb-1')).getText()).toEqual('Enjoy your day!');
 	})
 	    
-	xit('upload file',function(){
+	fit('upload file',function(){
 		var filePath = "./FirstFrame.png"
 		var fPath = path.resolve(filePath);
 		
@@ -25,12 +25,13 @@ describe('login to appointy',function(){
 		
 		element(by.xpath('//span[contains(text(), "Your Business")]')).click();
 		browser.waitForAngularEnabled(false);
-		var imageButton = element(by.xpath('//div[@class="business-logo-placeholder__container ng-tns-c15-8 ng-star-inserted"]'));
+		var imageButton = element(by.xpath('//img[@alt="business logo"]'));
 		browser.executeScript("arguments[0].scrollIntoView(true);",imageButton)
 		imageButton.click();
 		
 		element(by.xpath('//input[@type="file"]')).sendKeys(fPath);
-		element(by.xpath("/html/body/app-root/main/app-core-layout/div/div/div/div/settings/div/div/div/business-details/app-ngximg-image-upload[1]/div/div/div/div[2]/div[1]/div/button")).click()
+//		browser.sleep(2000)
+		element(by.xpath('//span[text()="Upload "]')).click()
 		browser.sleep(3000);
 		
 	})

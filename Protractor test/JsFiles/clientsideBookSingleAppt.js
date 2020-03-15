@@ -16,14 +16,16 @@
 	        
 						});
 			
+//	browser.manage().timeouts().implicitlyWait(8000)	
 		
-		
-		it('book appointment with normal card',function()
+		fit('book appointment with normal card',function()
 			
 							{
 //	---- service page
 			
-		browser.wait(EC.stalenessOf(bookingPage.loader), 40000);
+		browser.wait(EC.stalenessOf(bookingPage.loader), 40000).then(function(){
+			console.log('waiting')
+		})
 		
 		bookingPage.service.isPresent().then(function(value)
 						{
